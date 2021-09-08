@@ -22,11 +22,6 @@ Which should result in:
 Serverless: Compiling with Typescript...
 Serverless: Using local tsconfig.json
 Serverless: Typescript compiled.
-
-{
-    "statusCode": 200,
-    "body": "{\"code\":0,\"message\":\"success\",\"data\":[{\"_id\":\"5dff21f71c9d440000a30dad\",\"createdAt\":\"2020-05-16T09:27:51.219Z\"},{\"_id\":\"5dff22ba1c9d440000a30dae\",\"createdAt\":\"2020-05-16T09:27:51.220Z\"}]}"
-}
 ```
 
 ## Deploy
@@ -44,48 +39,6 @@ $ npm run deploy
 # or
 
 $ serverless deploy
-```
-
-The expected result should be similar to:
-
-```
-Serverless: Compiling with Typescript...
-Serverless: Using local tsconfig.json
-Serverless: Typescript compiled.
-Serverless: Packaging service...
-Serverless: Excluding development dependencies...
-Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading artifacts...
-Serverless: Uploading service aws-node-rest-api-typescript.zip file to S3 (1.86 MB)...
-Serverless: Validating template...
-Serverless: Updating Stack...
-Serverless: Checking Stack update progress...
-......................................
-Serverless: Stack update finished...
-Service Information
-service: aws-node-rest-api-typescript
-stage: dev
-region: us-east-1
-stack: aws-node-rest-api-typescript-dev
-resources: 32
-api keys:
-  None
-endpoints:
-  POST - https://xxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/books
-  PUT - https://xxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/books/{id}
-  GET - https://xxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/books
-  GET - https://xxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/books/{id}
-  DELETE - https://xxxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/books/{id}
-functions:
-  create: aws-node-rest-api-typescript-dev-create
-  update: aws-node-rest-api-typescript-dev-update
-  find: aws-node-rest-api-typescript-dev-find
-  findOne: aws-node-rest-api-typescript-dev-findOne
-  deleteOne: aws-node-rest-api-typescript-dev-deleteOne
-layers:
-  None
-Serverless: Removing old service artifacts from S3...
-Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
 ```
 
 ## Usage
