@@ -1,0 +1,28 @@
+service: typescript-api
+
+plugins:
+  - serverless-plugin-typescript 
+  - serverless-offline
+
+custom:
+  region: 'eu-west-1'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ${self:custom.region}
+
+  environment:
+    NODE_ENV: dev
+
+functions:
+  api:
+    handler: app/handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
